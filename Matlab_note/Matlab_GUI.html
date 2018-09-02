@@ -87,5 +87,38 @@ Matlab GUI 的一些小知识的
 <div class="remarks">备注：</div>
 </code></pre>
 </div>
+<h3>matlab GUI 设置背景图片</h3>
+<div class="mcode">
+<pre class="codesty" ><code>
+	ha=axes('units','normalized','pos',[0 0 1 1]);
+	uistack(ha,'down');
+	ii=imread('img/1.jpg');
+	%设置程序的背景图为beijing1.jpg
+	image(ii);
+	colormap gray
+	set(ha,'handlevisibility','off','visible','off');
+</code></pre>
+</div>
+<h3>matlab GUI 坐标轴显示图片</h3>
+<div class="mcode">
+<pre class="codesty" ><code>
+	G=imread('img/z.jpg');
+	axes(handles.log); 
+	imshow(G);
+</code></pre>
+</div>
+<h3>matlab GUI 按键背景图片</h3>
+<div class="mcode">
+<pre class="codesty" ><code>
+	m1=imread('img/A2.jpg');   %读取图片
+	set(handles.pushbutton2,'CData',m1);  %将按钮的背景图片设置成A，美化按钮
+</code></pre>
+</div>
+<h3>matlab GUI 文本框设置背景颜色</h3>
+<div class="mcode">
+<pre class="codesty" ><code>
+	set(handles.title,'BackgroundColor',[0,0.749,1]);
+</code></pre>
+</div>
 </body>
 </html>
