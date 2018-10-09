@@ -120,5 +120,33 @@ Matlab GUI 的一些小知识的
 	set(handles.title,'BackgroundColor',[0,0.749,1]);
 </code></pre>
 </div>
+<h3>matlab GUI 进度条</h3>
+<div class="mcode">
+<pre class="codesty" ><code>
+	h=waitbar(0,'please wait');
+	for i=1:1000
+	    %computation here%
+	    str=['运行中...',num2str(i/1000*100),'%'];
+	    waitbar(i/1000,h,str)
+	end
+	delete(h);
+</code></pre>
+</div>
+<h3>matlab 解方程</h3>
+<div class="mcode">
+<pre class="codesty" ><code>
+    function q=myfun(p)
+    x=p(1);
+    y=p(2);
+    z=p(3);
+    q(1)=sqrt( (x+18255).^2 + (y+37868).^2 + (z-3384.6).^2) - ...
+        sqrt( (x+1333.9).^2 + (y-5326.25).^2 + (z-3234.48).^2)-45392.4490823861;
+    q(2)=( y-5326.25 )/( x+1333.9 )- 1.08546504001049;
+    q(3)= ( sqrt( (x+1333.9).^2 + (y-5326.25).^2 ) )/( z-3234.48 )-1.23359181214847;
+    %fsolve('myfun',[-1638,4995.27,3599]',optimset('Display','off'))
+</code></pre>
+</div>
+
 </body>
 </html>
+
